@@ -8,7 +8,7 @@
 
 | Web Exploits    | Strategy                                                                               | Tools                                  | Technique                                              |
 | --------------- | -------------------------------------------------------------------------------------- | -------------------------------------- | ------------------------------------------------------ |
-| SQLi            | Database enumeration -> Column number -> Determine Output layout ->  Objectives - WiRE | ffuf, burpsuite                        | `admin' 1 or 1=1 -- - ... '1'=1`                       |
+| SQLi            | Database enumeration -> Column number -> Determine Output layout ->  Objectives - WiRE | `ffuf`, `burpsuite`                    | `admin' 1 or 1=1 -- - ... '1'=1`                       |
 | cmd injection   | Strategy                                                                               | `para?;` `/cgi-bin`                    |                                                        |
 | XXS             | Strategy                                                                               | burpsuite                              | `<imgsrc= />` ... polyglots                            |
 | SSTI            | Strategy                                                                               | `{{7*7}} -> Confirm backend`           |                                                        |
