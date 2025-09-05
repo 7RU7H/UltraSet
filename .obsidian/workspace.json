@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Hacking/UltraSystemics.md",
+                "file": "Hacking/UltraPWN.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "UltraSystemics"
+              "title": "UltraPWN"
             }
           },
           {
@@ -35,8 +35,7 @@
               "title": "UltraSE"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -184,14 +183,26 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "17568f50c02310df",
+  "active": "bfb547cf395a8caa",
   "lastOpenFiles": [
+    "Hacking/HackingScriptTemplate/jhshellcode.py",
+    "Hacking/HackingScriptTemplate/jhoffset.py",
+    "Hacking/HackingScriptTemplate/jhjmplocation.py",
+    "Hacking/HackingScriptTemplate/jhexp.py",
+    "Hacking/HackingScriptTemplate/jhctrleip.py",
+    "Hacking/HackingScriptTemplate/jhbadchars.py",
+    "Hacking/HackingScriptTemplate/genbadchars.py",
+    "Hacking/HackingScriptTemplate/fuzzer.py",
+    "Hacking/HackingScriptTemplate/crash-rep-ctrl-eip.py",
+    "Hacking/HackingScriptTemplate",
+    "Hacking/BufferOverflowScripts/jhshellcode.py",
+    "BrainAndEtc/UltraLearning.md",
     "Hacking/UltraHacking.md",
     "Social-Engineering/UltraSE.md",
+    "Hacking/UltraSystemics.md",
     "Hacking/UltraPWN.md",
     "BrainAndEtc/UltraStrategy.md",
     "Hacking/UltraWeb-Manuals-Methods.md",
-    "BrainAndEtc/UltraLearning.md",
     "BrainAndEtc/UltraDiet.md",
     "BrainAndEtc/UltraBrain.md",
     "Question-Based-Methodologies/Question-Based-Web-Application-Hacking-Methodology.md",
@@ -202,10 +213,8 @@
     "Question-Based-Methodologies/Question-Based-Forensics-Methodology.md",
     "Question-Based-Methodologies/Question-Based-CTI-Methodology.md",
     "Question-Based-Methodologies/Question-Based-CISO-Methodology.md",
-    "Question-Based-Methodologies",
     "Hacking/AD-Hacking-Linux-Setup.md",
     "Hacking/UltraOSINT.md",
-    "Hacking/Exam-BOF-Cheatsheat.md",
-    "Hacking/UltraSystemics.md"
+    "Hacking/Exam-BOF-Cheatsheat.md"
   ]
 }

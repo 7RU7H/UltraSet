@@ -7,7 +7,7 @@ Exercise:
 
 Personality and Environment
 - Be humble 
-- Be curious
+- Be curious, ask good, stupid, futuristic, etc questions
 - Be confident in not making errors, by practising - see Error section  
 - Get mentors, no solo
 - Pick a good place to learn that is your learning spot

