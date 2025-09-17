@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Hacking/UltraPWN.md",
+                "file": "Hacking/UltraHacking.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "UltraPWN"
+              "title": "UltraHacking"
             }
           },
           {
@@ -185,6 +185,12 @@
   },
   "active": "bfb547cf395a8caa",
   "lastOpenFiles": [
+    "Hacking/Msfvenom-Some-Good-Shells.md",
+    "Hacking/AD-Hacking-Linux-Setup.md",
+    "Hacking/UltraHacking.md",
+    "Hacking/UltraSystemics.md",
+    "BrainAndEtc/UltraBrain.md",
+    "Hacking/UltraPWN.md",
     "Hacking/HackingScriptTemplate/jhshellcode.py",
     "Hacking/HackingScriptTemplate/jhoffset.py",
     "Hacking/HackingScriptTemplate/jhjmplocation.py",
@@ -195,16 +201,11 @@
     "Hacking/HackingScriptTemplate/fuzzer.py",
     "Hacking/HackingScriptTemplate/crash-rep-ctrl-eip.py",
     "Hacking/HackingScriptTemplate",
-    "Hacking/BufferOverflowScripts/jhshellcode.py",
     "BrainAndEtc/UltraLearning.md",
-    "Hacking/UltraHacking.md",
     "Social-Engineering/UltraSE.md",
-    "Hacking/UltraSystemics.md",
-    "Hacking/UltraPWN.md",
     "BrainAndEtc/UltraStrategy.md",
     "Hacking/UltraWeb-Manuals-Methods.md",
     "BrainAndEtc/UltraDiet.md",
-    "BrainAndEtc/UltraBrain.md",
     "Question-Based-Methodologies/Question-Based-Web-Application-Hacking-Methodology.md",
     "Question-Based-Methodologies/Question-Based-Reversing-Methodology.md",
     "Question-Based-Methodologies/Question-Based-Pwning-Methodology.md",
@@ -213,7 +214,6 @@
     "Question-Based-Methodologies/Question-Based-Forensics-Methodology.md",
     "Question-Based-Methodologies/Question-Based-CTI-Methodology.md",
     "Question-Based-Methodologies/Question-Based-CISO-Methodology.md",
-    "Hacking/AD-Hacking-Linux-Setup.md",
     "Hacking/UltraOSINT.md",
     "Hacking/Exam-BOF-Cheatsheat.md"
   ]

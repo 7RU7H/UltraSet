@@ -5,6 +5,14 @@ Is me or environment
 Full Systemic review
 - What commands should be included really?
 
+Trying to figure out a way to remember, but encapsulates entirely
+- What you have and not have
+- What does the environment say and not say how can you interact from-start-to-finish
+- How should it not be used to gain the result you want
+
+
+
+
 Sliver Talk noted to scrap from Holo rererererererere.....
 
 https://github.com/xct/wiki
@@ -132,6 +140,9 @@ ping -c 3 $IP
 # -vvv for to get started asap
 sudo nmap -Pn -sT -vvv -p- --min-rate 1000 -e tun0 -oA nmap/all-vvv-TCP-ports $IP
 sudo nmap -sT -vvv -p- --min-rate 1000 -e tun0 -oA nmap/all-vvv-TCP-ports $IP
+
+nmap -Pn -sC -sV --min-rate 500 -e tun0 -oA nmap/sc-sv-some-ports-$num -p $ports $IP
+
 # Some nmap scans - no UDP
 ~/7ru7hGithub/AutomateRecon/exec-nmap-No-slowST-Or-sU.sh
 
@@ -256,6 +267,17 @@ cat nmap/.nmap | grep open | awk -F/ '{print $1}' | tr -s '\n' '-' | sed 's/-/\n
 ```
 
 ## Exploitation
+
+Backup the exploit code
+```bash
+cp $file.$ext $file.$ext.bak
+```
+
+Read the exploit code
+- Decode encoded text in CyberChef 
+- If its python beware of indentation
+
+Test on Testing system first were possible
 
 Capture traffic on a interface of protocol and port in a version manner
 ```bash

