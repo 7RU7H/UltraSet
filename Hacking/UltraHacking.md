@@ -137,21 +137,25 @@ One liners
 ```bash
 ping -c 3 $IP
 
+# Ask "Is -Pn required?"
+sudo nmap -F -n --min-rate 200 -e tun0 $IP
 # -vvv for to get started asap
 sudo nmap -Pn -sT -vvv -p- --min-rate 1000 -e tun0 -oA nmap/all-vvv-TCP-ports $IP
 sudo nmap -sT -vvv -p- --min-rate 1000 -e tun0 -oA nmap/all-vvv-TCP-ports $IP
-
-nmap -Pn -sC -sV --min-rate 500 -e tun0 -oA nmap/sc-sv-some-ports-$num -p $ports $IP
-
 # Some nmap scans - no UDP
 ~/7ru7hGithub/AutomateRecon/exec-nmap-No-slowST-Or-sU.sh
-
 # UDP
 sudo nmap -sU -p- --min-rate 1000 -e tun0 -oA nmap/all-UDP-ports $IP
 # Rescanning
 sudo nmap -Pn -p- --min-rate 100 -e tun0 -oA nmap/all-tcp-ports-slower $IP
 # Then all
 ~/7ru7hGithub/AutomateRecon/exec-all-nmap-AllTheScans.sh $IP 1000 tun0  
+# The above script includes the following WITH a -Pn required check
+sudo nmap -Pn -sC -sV --min-rate 500 -e tun0 -oA nmap/sc-sv-some-ports-$num -p $ports $IP
+sudo nmap -Pn --script discovery --min-rate 500 -e tun0 -oA nmap/sc-sv-some-ports-$num -p $ports $IP
+sudo nmap -Pn --script vuln --min-rate 500 -e tun0 -oA nmap/sc-sv-some-ports-$num -p $ports $IP
+
+
 
 # Web needs
 
@@ -264,6 +268,17 @@ wpscan --url $url -rua -e --api-token $APIKEY
 
 ```bash
 cat nmap/.nmap | grep open | awk -F/ '{print $1}' | tr -s '\n' '-' | sed 's/-/\n- /g'
+```
+
+Python proxy to burpsuite 
+```python
+proxy = { "http": "http://127.0.0.1:8080" }
+r.request(args,args, proxies=proxy)
+```
+
+Proxychains
+```
+http 127.0.0.1 8080
 ```
 
 ## Exploitation
@@ -712,6 +727,8 @@ echo "r00t:x:0:0:root:/root:/bin/bash" >> /etc/passwd
 # System
 set pro # Architecture 
 shutdown /r /fw /f /t 0 # Retart to system bios without touching a hotkey!
+
+type "white space" 
 
 
 # CLI
