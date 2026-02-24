@@ -6,6 +6,8 @@
 
 ```
 
+If you see a `<script>` tag with a **src** attribute, it indicates that the page is loading external JS from a separate file.
+
 | Web Exploits    | Strategy                                                                               | Tools                                  | Technique                                              |
 | --------------- | -------------------------------------------------------------------------------------- | -------------------------------------- | ------------------------------------------------------ |
 | SQLi            | Database enumeration -> Column number -> Determine Output layout ->  Objectives - WiRE | `ffuf`, `burpsuite`                    | `admin' 1 or 1=1 -- - ... '1'=1`                       |

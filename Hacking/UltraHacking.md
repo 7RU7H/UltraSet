@@ -11,7 +11,9 @@ Trying to figure out a way to remember, but encapsulates entirely
 - How should it not be used to gain the result you want
 
 
-
+```bash
+openvpn --script-security 2 --down vpn-down.sh --config $VPNfile
+```
 
 Sliver Talk noted to scrap from Holo rererererererere.....
 
@@ -546,6 +548,16 @@ ExitOnSession false
 ```
 
 ## Beacons and Shells 
+
+Compilation for C reverse shells
+```bash
+# linux 
+gcc program.c -o outfile
+# Windows
+cl progam.c /out: outfile
+# MacOS and BSD
+clang program.c -o outfile
+```
 
 Sliver-O'Clock
 ```bash
