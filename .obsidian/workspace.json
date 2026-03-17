@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Hacking/UltraHacking.md",
+                "file": "Hacking/UltraPrompt.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "UltraHacking"
+              "title": "UltraPrompt"
             }
           }
         ],
@@ -82,7 +82,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "sqlmap",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -200,11 +200,13 @@
   },
   "active": "72ece55d53627dae",
   "lastOpenFiles": [
-    "Hacking/UltraWeb-Manuals-Methods.md",
     "Hacking/UltraHacking.md",
+    "Hacking/UltraPrompt.md",
+    "Question-Based-Methodologies/Question-Based-Web-Application-Hacking-Methodology.md",
+    "Hacking/UltraWeb-Manuals-Methods.md",
+    "Hacking/UltraSystemics.md",
     "Social-Engineering/UltraSE.md",
     "BrainAndEtc/UltraLearning.md",
-    "Hacking/UltraSystemics.md",
     "Hacking/Msfvenom-Some-Good-Shells.md",
     "Hacking/AD-Hacking-Linux-Setup.md",
     "BrainAndEtc/UltraBrain.md",
@@ -221,7 +223,6 @@
     "Hacking/HackingScriptTemplate",
     "BrainAndEtc/UltraStrategy.md",
     "BrainAndEtc/UltraDiet.md",
-    "Question-Based-Methodologies/Question-Based-Web-Application-Hacking-Methodology.md",
     "Question-Based-Methodologies/Question-Based-Reversing-Methodology.md",
     "Question-Based-Methodologies/Question-Based-Pwning-Methodology.md",
     "Question-Based-Methodologies/Question-Based-Penetration-Testing-Methodology.md",

