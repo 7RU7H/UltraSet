@@ -25,8 +25,8 @@ Logging
 Tmux
 
 VPNs - NEEDS work!
-```
-sudo openvpn --script-security 2 --down vpn-down.sh --config $config VPNKeys/$VPNfile
+```bash
+sudo openvpn --script-security 2 --down vpn-down.sh --config $config VPN-Keys/$VPNfile
 ```
 https://openvpn.net/community-resources/creating-configuration-files-for-server-and-clients/
 https://openvpn.net/community-resources/how-to/#examples
@@ -137,6 +137,13 @@ Unprotect-File '.\secrets.txt.AES' -Algorithm AES -Key $key -RemoveSource
 
 One liners 
 ```bash
+
+sudo naabu -v -stats -host 10.10.10.10/$CIDR -p 0 -i $interface -c $workers -rate $naabuRate -nc -o naabu/10-10-10-10-CDIR-initial
+
+sudo naabu -v -stats -host 10.10.10.10 -p 0-65535 -i $interface -c $workers -rate $naabuRate -nc -o naabu/10-10-10-10-allports -nmap-cli 'nmap -sV -sC --min-rate $nmapRate -e $interface -oN nmap/from-naabu-some-ports-sc-sv'
+
+sudo masscan -p0-65535 -oG masscan.log --rate=$beware -e $interface $ip/cidr
+
 ping -c 3 $IP
 
 # Ask "Is -Pn required?"
