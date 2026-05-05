@@ -137,6 +137,10 @@ Unprotect-File '.\secrets.txt.AES' -Algorithm AES -Key $key -RemoveSource
 
 One liners 
 ```bash
+# Headers and stack information for reporting
+curl $URL -v 
+# Get an index-$id.js to enumerate the version, dont forget enumerate version.js too
+curl $URL -s | grep -P '.js\b'
 
 sudo naabu -v -stats -host 10.10.10.10/$CIDR -p 0 -i $interface -c $workers -rate $naabuRate -nc -o naabu/10-10-10-10-CDIR-initial
 
@@ -192,7 +196,7 @@ ffuf -w wordlist.txt:FUZZ -u http://$IP/FUZZ -recursion -recursion-depth 1 -e .p
 
 
 # VHOSTs
-
+ffuf -u http://domain.com -H "Host: FUZZ.domain.com" -c -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt:FUZZ -mc all -fw
 
 ffuf -u http://mydomain.com -H "Host: FUZZ.mydomain.com" -c -w /usr/share/seclists/Discovery/DNS/dns-Jhaddix.txt:FUZZ -mc all -fw $wordifneeded -o $host_JhaddixVhost.ffuf
 
